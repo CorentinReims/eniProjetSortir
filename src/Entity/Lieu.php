@@ -37,6 +37,12 @@ class Lieu
      */
     private $lon;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Ville::class, inversedBy="lieus")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $idVille;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +92,18 @@ class Lieu
     public function setLon(?string $lon): self
     {
         $this->lon = $lon;
+
+        return $this;
+    }
+
+    public function getIdVille(): ?Ville
+    {
+        return $this->idVille;
+    }
+
+    public function setIdVille(?Ville $idVille): self
+    {
+        $this->idVille = $idVille;
 
         return $this;
     }
