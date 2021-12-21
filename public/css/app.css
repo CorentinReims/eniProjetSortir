@@ -1,6 +1,6 @@
 body
 {
-    height:100vh;
+    height:100%;
     background-color: #AAAAAA;
 }
 header
@@ -18,4 +18,9 @@ footer
     width:100%;
     height:60px;   /* Height of the footer */
     background:#6cf;
+}
+
+#content
+{
+    height: 80vh;
 }
