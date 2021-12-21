@@ -36,6 +36,31 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $password;
 
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $nom;
+
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $prenom;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $tel;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $admin;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $actif;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -123,5 +148,65 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(string $prenom): self
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getTel(): ?int
+    {
+        return $this->tel;
+    }
+
+    public function setTel(int $tel): self
+    {
+        $this->tel = $tel;
+
+        return $this;
+    }
+
+    public function getAdmin(): ?bool
+    {
+        return $this->admin;
+    }
+
+    public function setAdmin(?bool $admin): self
+    {
+        $this->admin = $admin;
+
+        return $this;
+    }
+
+    public function getActif(): ?bool
+    {
+        return $this->actif;
+    }
+
+    public function setActif(?bool $actif): self
+    {
+        $this->actif = $actif;
+
+        return $this;
     }
 }
